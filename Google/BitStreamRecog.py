@@ -17,9 +17,7 @@ def CheckSingleOrDouble(bitStream):
     if inputL < 8 or inputL % 8 != 0:
         return "Invalid"
 
-
     currentLast = bitStream[-step]
-
 
     if currentLast == '0':
         i = 1
@@ -47,20 +45,14 @@ def CheckSingleOrDouble(bitStream):
             i += 1
             currentLast = bitStream[-i*step]
 
-
         if bitStream[-i * step] == '1':
             stored.append('1')
 
         s = len(stored)
-
         if s %2 == 0:
             return "Double"
         else:
             return "Invalid"
-
-
-
-
 
 def test():
 
